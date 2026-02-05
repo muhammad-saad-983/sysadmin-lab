@@ -1,0 +1,15 @@
+      [ Client ]
+     /          \
+(site1.lab)  (site2.lab)
+   |              |
+   +-------+------+
+           |
+        [ srv1 ] (192.168.56.10)
+           |
+      [ Nginx Reverse Proxy ]
+           |
+    +------+------+
+    |             |
+[VirtualHost 1] [VirtualHost 2]
+    |             |
+ /var/www/site1 /var/www/site2
