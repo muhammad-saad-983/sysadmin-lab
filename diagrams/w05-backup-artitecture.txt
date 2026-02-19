@@ -1,0 +1,12 @@
+       [ srv1 (Source) ]                    [ srv2 (Target) ]
+       IP: 192.168.56.10                    IP: 192.168.56.11
+       -----------------                    -----------------
+       | /etc/         |                    |               |
+       | /etc/nginx/   | ---[ SSH/rsync ]-->| /home/saad/   |
+       | /var/www/     |      (Port 22)     |   backups/    |
+       | /home/saad/   |                    |     srv1/     |
+       -----------------                    -----------------
+             ^                                     |
+             |                                     |
+       [systemd.timer]                      [Retention: 7 Days]
+       (Daily @ 00:00)                      (Auto-pruning)
